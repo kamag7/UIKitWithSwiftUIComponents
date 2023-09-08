@@ -16,9 +16,7 @@ class MoviesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        self.title = "Movies"
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        setupView()
         setupCollectionView()
 
         Task {
@@ -54,6 +52,11 @@ class MoviesViewController: UIViewController {
             collectionView!.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             collectionView!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
         ])
+    }
+
+    func setupView() {
+        view.backgroundColor = .black
+        self.title = "Movies"
     }
 }
 
